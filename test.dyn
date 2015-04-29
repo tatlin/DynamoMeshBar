@@ -1,0 +1,16 @@
+<Workspace Version="0.8.0.950" X="42" Y="-284.666666666667" zoom="1" Name="Home" RunType="Manual" RunPeriod="100" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Autodesk.Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="7227b7e0-042f-4714-beed-a4db994b9640" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="45.3333333333336" y="407.666666666667" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="Autodesk.Point.ByCoordinates(0,0,0);&#xA;Autodesk.Point.ByCoordinates(0,50,0);&#xA;3.0;&#xA;8;" ShouldFocus="false" />
+    <Dynamo.Nodes.DSFunction guid="319d48c0-4633-4b17-bee4-879b74ae6198" type="Dynamo.Nodes.DSFunction" nickname="DynamoMeshBar.CreateMeshBarFromPoints" x="444" y="392" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="bin\Debug\DynamoMeshBar.dll" function="DynamoMeshBar.DynamoMeshBar.CreateMeshBarFromPoints@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,double,int" />
+  </Elements>
+  <Connectors>
+    <Dynamo.Models.ConnectorModel start="7227b7e0-042f-4714-beed-a4db994b9640" start_index="0" end="319d48c0-4633-4b17-bee4-879b74ae6198" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="7227b7e0-042f-4714-beed-a4db994b9640" start_index="1" end="319d48c0-4633-4b17-bee4-879b74ae6198" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="7227b7e0-042f-4714-beed-a4db994b9640" start_index="2" end="319d48c0-4633-4b17-bee4-879b74ae6198" end_index="2" portType="0" />
+    <Dynamo.Models.ConnectorModel start="7227b7e0-042f-4714-beed-a4db994b9640" start_index="3" end="319d48c0-4633-4b17-bee4-879b74ae6198" end_index="3" portType="0" />
+  </Connectors>
+  <Notes />
+</Workspace>

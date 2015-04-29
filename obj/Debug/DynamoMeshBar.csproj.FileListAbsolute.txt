@@ -1,0 +1,7 @@
+C:\Users\mattjezyk\Documents\GitHub\DynamoMeshBar\bin\Debug\DynamoMeshBar.dll
+C:\Users\mattjezyk\Documents\GitHub\DynamoMeshBar\bin\Debug\DynamoMeshBar.pdb
+C:\Users\mattjezyk\Documents\GitHub\DynamoMeshBar\bin\Debug\DynamoServices.dll
+C:\Users\mattjezyk\Documents\GitHub\DynamoMeshBar\bin\Debug\DynamoServices.pdb
+C:\Users\mattjezyk\Documents\GitHub\DynamoMeshBar\obj\Debug\DynamoMeshBar.dll
+C:\Users\mattjezyk\Documents\GitHub\DynamoMeshBar\obj\Debug\DynamoMeshBar.pdb
+C:\Users\mattjezyk\Documents\GitHub\DynamoMeshBar\obj\Debug\DynamoMeshBar.csprojResolveAssemblyReference.cache
