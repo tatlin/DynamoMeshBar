@@ -70,43 +70,49 @@ namespace DynamoMeshBar
 
         public static List<Line> CreateLinesFromMesh(Mesh mesh, int limit)
         {
-            HashSet<Line> lines = new HashSet<Line>();
+            List<Line> lines = new List<Line>();
 
             // use a using statement here to ensure copy of vertices goes out of scope, or just not have a local copy at all?
-            //Point[] vertices = mesh.VertexPositions;
-            //IndexGroup[] indices = mesh.FaceIndices;
+            Point[] vertices = mesh.VertexPositions;
+            IndexGroup[] indices = mesh.FaceIndices;
 
             //need edge list here but it's not avail in DS mesh class exposure. edge list would be much better than traversing indices 
 
-            foreach (IndexGroup index in mesh.FaceIndices)
+            foreach (IndexGroup index in indices)
             {
                 if (lines.Count < limit)
                 {
 
+
+                    Line line1 = Line.ByStartPointEndPoint(vertices[index.A], vertices[index.B]);
+                    Line line2 = Line.ByStartPointEndPoint(vertices[index.B], vertices[index.C]);
+                    Line line3 = Line.ByStartPointEndPoint(vertices[index.C], vertices[index.A]);
+
                     //this is ineffiecent and will result in overlapping lines if using a straight list, need to use HashSet instead 
-                    Line line1 = Line.ByStartPointEndPoint(mesh.VertexPositions[index.A], mesh.VertexPositions[index.B]);
-                    Line line2 = Line.ByStartPointEndPoint(mesh.VertexPositions[index.B], mesh.VertexPositions[index.C]);
-                    Line line3 = Line.ByStartPointEndPoint(mesh.VertexPositions[index.C], mesh.VertexPositions[index.A]);
+                    //Line line1 = Line.ByStartPointEndPoint(mesh.VertexPositions[index.A], mesh.VertexPositions[index.B]);
+                    //Line line2 = Line.ByStartPointEndPoint(mesh.VertexPositions[index.B], mesh.VertexPositions[index.C]);
+                    //Line line3 = Line.ByStartPointEndPoint(mesh.VertexPositions[index.C], mesh.VertexPositions[index.A]);
                     lines.Add(line1);
                     lines.Add(line2);
                     lines.Add(line3);
 
                     //cleanup local vars
-                    line1.Dispose();
-                    line2.Dispose();
-                    line3.Dispose();
+                    //line1.Dispose();
+                    //line2.Dispose();
+                    //line3.Dispose();
 
                     if (index.Count == 4)
                     {
-                        Line line4 = Line.ByStartPointEndPoint(mesh.VertexPositions[index.C],
-                            mesh.VertexPositions[index.D]);
+                        Line line4 = Line.ByStartPointEndPoint(vertices[index.C], vertices[index.D]);
+                        //Line line4 = Line.ByStartPointEndPoint(mesh.VertexPositions[index.C],
+                        //    mesh.VertexPositions[index.D]);
                         lines.Add(line4);
-                        line4.Dispose();
+                        //line4.Dispose();
                     }
                 }
             }
 
-            return lines.ToList();
+            return lines;//.ToList();
         }
 
         public static Mesh CreateMeshBarFromEdge(Edge edge, double radius = 8, int edgeCount = 6)
