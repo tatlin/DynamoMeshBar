@@ -1,0 +1,25 @@
+<Workspace Version="0.8.0.950" X="42" Y="-284.666666666667" zoom="1" Name="Home" RunType="Manual" RunPeriod="100" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Autodesk.Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="IndexGroup" resolvedName="Autodesk.DesignScript.Geometry.IndexGroup" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Nodes.CodeBlockNodeModel guid="7227b7e0-042f-4714-beed-a4db994b9640" type="Dynamo.Nodes.CodeBlockNodeModel" nickname="Code Block" x="24.0000000000002" y="371.666666666667" isVisible="true" isUpstreamVisible="true" lacing="Disabled" CodeText="x;&#xA;a = Autodesk.Point.ByCoordinates(0,0,0);&#xA;b = Autodesk.Point.ByCoordinates(0,x,0);&#xA;c = Autodesk.Point.ByCoordinates(x,x,0);&#xA;d = Autodesk.Point.ByCoordinates(x,0,0);&#xA;3.0;&#xA;8;&#xA;e = IndexGroup.ByIndices(0,1,2);&#xA;f = IndexGroup.ByIndices(2,3,0);&#xA;{a,b,c,d};&#xA;{e,f};&#xA;&quot;blah&quot;;" ShouldFocus="false" />
+    <Dynamo.Nodes.DSFunction guid="319d48c0-4633-4b17-bee4-879b74ae6198" type="Dynamo.Nodes.DSFunction" nickname="DynamoMeshBar.CreateMeshBarFromPoints" x="444" y="392" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="bin\Debug\DynamoMeshBar.dll" function="DynamoMeshBar.DynamoMeshBar.CreateMeshBarFromPoints@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,double,int" />
+    <Dynamo.Nodes.DSFunction guid="9e39479b-41d3-4d51-ae9c-3525a4216d4d" type="Dynamo.Nodes.DSFunction" nickname="Mesh.ByPointsFaceIndices" x="549.333333333333" y="614" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Mesh.ByPointsFaceIndices@Autodesk.DesignScript.Geometry.Point[],Autodesk.DesignScript.Geometry.IndexGroup[]" />
+    <DSCoreNodesUI.CreateList guid="6f75fcb4-3fc5-445d-86e6-96846185991c" type="DSCoreNodesUI.CreateList" nickname="List.Create" x="115.333333333333" y="638" isVisible="true" isUpstreamVisible="true" lacing="Disabled" inputcount="4" />
+    <Dynamo.Nodes.DSFunction guid="b4c278aa-5a19-450c-852d-d5afd862e1e1" type="Dynamo.Nodes.DSFunction" nickname="DirectShapeFromDSMesh.NewDirectShape" x="903.333333333333" y="455.333333333334" isVisible="true" isUpstreamVisible="true" lacing="Shortest" assembly="bin\Debug\DynamoMeshBar.dll" function="DynamoMeshBar.DirectShapeFromDSMesh.NewDirectShape@Autodesk.DesignScript.Geometry.Mesh,string" />
+    <DSCoreNodesUI.Input.DoubleSlider guid="1c8b4a79-775a-4224-973b-7f6c53f04c80" type="DSCoreNodesUI.Input.DoubleSlider" nickname="Number Slider" x="85.3333333333333" y="312" isVisible="true" isUpstreamVisible="true" lacing="Disabled">
+      <System.Double>50</System.Double>
+      <Range min="0" max="100" step="0.1" />
+    </DSCoreNodesUI.Input.DoubleSlider>
+  </Elements>
+  <Connectors>
+    <Dynamo.Models.ConnectorModel start="7227b7e0-042f-4714-beed-a4db994b9640" start_index="9" end="9e39479b-41d3-4d51-ae9c-3525a4216d4d" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="7227b7e0-042f-4714-beed-a4db994b9640" start_index="10" end="9e39479b-41d3-4d51-ae9c-3525a4216d4d" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="7227b7e0-042f-4714-beed-a4db994b9640" start_index="11" end="b4c278aa-5a19-450c-852d-d5afd862e1e1" end_index="1" portType="0" />
+    <Dynamo.Models.ConnectorModel start="9e39479b-41d3-4d51-ae9c-3525a4216d4d" start_index="0" end="b4c278aa-5a19-450c-852d-d5afd862e1e1" end_index="0" portType="0" />
+    <Dynamo.Models.ConnectorModel start="1c8b4a79-775a-4224-973b-7f6c53f04c80" start_index="0" end="7227b7e0-042f-4714-beed-a4db994b9640" end_index="0" portType="0" />
+  </Connectors>
+  <Notes />
+</Workspace>
